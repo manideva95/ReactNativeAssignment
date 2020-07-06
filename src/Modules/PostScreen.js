@@ -4,9 +4,9 @@ import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView, FlatList, Activ
 import { getPosts } from '../actions/PostAction'
 import moment from 'moment'
 export const PostScreen = ({ getPosts, posts, navigation }) => {
-
+    let initialState = 0
     const [post, setPost] = useState([])
-    const [pagination, setPagination] = useState(0)
+    const [pagination, setPagination] = useState(initialState)
     const [loading, setLoading] = useState(false)
     useEffect(() => {
         setInterval(function () {
@@ -49,7 +49,6 @@ export const PostScreen = ({ getPosts, posts, navigation }) => {
         <SafeAreaView style={styles.container}>
             <View style={{ padding: 10 }}>
                 <Text style={{ fontWeight: 'bold' }}>Total Post Count - {post?.length}</Text>
-                <Text style={{ fontWeight: 'bold' }}>Pagination - {pagination}</Text>
             </View>
             <FlatList
                 data={post}
