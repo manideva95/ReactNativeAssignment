@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { View, Text } from 'react-native'
+import { View, Text, ScrollView } from 'react-native'
 
-export const RawJsonViewScreen = () => {
+export const RawJsonViewScreen = ({ route, navigation }) => {
+    const { item } = route.params;
     return (
-        <View>
-            <Text>{JSON.stringify('some', null, "       ")}</Text>
-        </View>
+        <ScrollView>
+            <Text>{JSON.stringify(item, null, "       ")}</Text>
+        </ScrollView>
     )
 }
 

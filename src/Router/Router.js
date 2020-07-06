@@ -14,7 +14,7 @@ const App = () => {
     return (
         <NavigationContainer>
             <Stack.Navigator initialRouteName={"PostScreen"}>
-                <Stack.Screen name="PostScreen" component={PostScreen} />
+                <Stack.Screen name="PostScreen" component={PostScreen} options={{ title: 'Posts' }} />
                 <Stack.Screen name="RawJsonViewScreen" component={RawJsonViewScreen} />
             </Stack.Navigator>
         </NavigationContainer>
